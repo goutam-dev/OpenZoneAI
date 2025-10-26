@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      OpenZoneAI - Empowering Businesses with Intelligent Automation
+    </title>
+    <link rel="icon" href="/static/images/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='/css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">
+          <img
+            src="{{ url_for('static', path='/images/logo.png') }}"
+            alt="OpenZoneAI Logo"
+            style="
+              height: 40px;
+              margin-right: 12px;
+              vertical-align: middle;
+              filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.5));
+            "
+          />
+          OpenZoneAI
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/ai">AI Business Analyzer</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/chat">Chatbot</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1><span id="typewriter-text"></span><span id="cursor">|</span></h1>
+        <p>
+          OpenZoneAI builds smart, AI-driven tools to make your workflows
+          faster, smarter, and more efficient.
+        </p>
+        <a href="/ai" class="cta-button">Try Our AI Idea Generator</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-subtitle">
+          Powerful AI solutions tailored for your business needs
+        </p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-icon">🤖</span>
+            <h3>AI Chatbots</h3>
+            <p>
+              Automate customer service and engagement with intelligent chatbots
+              that understand context and provide instant support.
+            </p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📊</span>
+            <h3>Data Insights</h3>
+            <p>
+              Transform raw data into actionable intelligence with advanced
+              analytics and machine learning algorithms.
+            </p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">⚙️</span>
+            <h3>Workflow Automation</h3>
+            <p>
+              Save time by automating repetitive tasks and streamlining your
+              business processes for maximum efficiency.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+      <div class="container">
+        <div class="about-content">
+          <h2 class="section-title">About OpenZoneAI</h2>
+          <p>
+            At OpenZoneAI, we combine innovation and intelligence to design
+            software that makes businesses future-ready. Our mission is to
+            democratize AI technology and make intelligent automation accessible
+            to businesses of all sizes.
+          </p>
+          <a href="/about" class="secondary-button">Learn More About Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 OpenZoneAI. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+    <script>
+      // Typewriter effect for hero section
+      document.addEventListener("DOMContentLoaded", function () {
+        const typewriterText = document.getElementById("typewriter-text");
+        const cursor = document.getElementById("cursor");
+
+        if (typewriterText) {
+          const text = "Empowering Businesses with Intelligent Automation";
+          let index = 0;
+          let isDeleting = false;
+          let displayText = "";
+
+          function type() {
+            if (!isDeleting && index < text.length) {
+              displayText += text.charAt(index);
+              index++;
+            } else if (isDeleting && index > 0) {
+              displayText = displayText.slice(0, -1);
+              index--;
+            }
+
+            typewriterText.textContent = displayText;
+
+            let speed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && displayText === text) {
+              // Wait before starting to delete
+              speed = 2000;
+            } else if (isDeleting && displayText === "") {
+              isDeleting = false;
+              speed = 500;
+            }
+
+            if (displayText === text && !isDeleting) {
+              setTimeout(() => {
+                isDeleting = true;
+              }, 2000);
+            }
+
+            setTimeout(type, speed);
+          }
+
+          // Start typing effect
+          setTimeout(type, 500);
+
+          // Blink cursor
+          setInterval(() => {
+            cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>

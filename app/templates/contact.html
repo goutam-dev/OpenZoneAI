@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - OpenZoneAI</title>
+    <link rel="icon" href="/static/images/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='/css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">
+          <img
+            src="{{ url_for('static', path='/images/logo.png') }}"
+            alt="OpenZoneAI Logo"
+            style="
+              height: 40px;
+              margin-right: 12px;
+              vertical-align: middle;
+              filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.5));
+            "
+          />
+          OpenZoneAI
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/ai">AI Business Analyzer</a></li>
+          <li><a href="/contact" class="active">Contact</a></li>
+          <li><a href="/chat">Chatbot</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 40vh">
+      <div class="hero-content">
+        <h1>Get In Touch</h1>
+        <p style="font-size: 1.25rem; margin-top: 1rem">
+          Have questions or ready to transform your business with AI? We're here
+          to help.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="features" style="padding-top: 4rem; padding-bottom: 4rem">
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+          "
+        >
+          <!-- Contact Info -->
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                var(--bg-tertiary) 0%,
+                var(--bg-secondary) 100%
+              );
+              padding: 3rem;
+              border-radius: 20px;
+              height: fit-content;
+              border: 1px solid rgba(0, 191, 255, 0.2);
+            "
+          >
+            <h2
+              style="
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: var(--text-primary);
+              "
+            >
+              Let's Connect
+            </h2>
+            <p
+              style="
+                margin-bottom: 3rem;
+                color: var(--text-secondary);
+                line-height: 1.8;
+              "
+            >
+              Whether you're exploring AI solutions or have a specific project
+              in mind, our team is ready to assist you. Reach out and let's
+              discuss how we can help.
+            </p>
+
+            <div style="margin-bottom: 2rem">
+              <div
+                style="
+                  display: flex;
+                  align-items: start;
+                  gap: 1rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background: var(--primary-blue);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+                  "
+                >
+                  <i
+                    class="fas fa-envelope"
+                    style="color: white; font-size: 1.25rem"
+                  ></i>
+                </div>
+                <div>
+                  <h3 style="margin-bottom: 0.5rem; color: var(--text-primary)">
+                    Email
+                  </h3>
+                  <p style="color: var(--text-secondary); margin: 0">
+                    contact@openzoneai.com
+                  </p>
+                </div>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: start;
+                  gap: 1rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background: var(--primary-blue);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+                  "
+                >
+                  <i
+                    class="fas fa-phone"
+                    style="color: white; font-size: 1.25rem"
+                  ></i>
+                </div>
+                <div>
+                  <h3 style="margin-bottom: 0.5rem; color: var(--text-primary)">
+                    Phone
+                  </h3>
+                  <p style="color: var(--text-secondary); margin: 0">
+                    +1 (555) 123-4567
+                  </p>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: start; gap: 1rem">
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background: var(--primary-blue);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+                  "
+                >
+                  <i
+                    class="fas fa-clock"
+                    style="color: white; font-size: 1.25rem"
+                  ></i>
+                </div>
+                <div>
+                  <h3 style="margin-bottom: 0.5rem; color: var(--text-primary)">
+                    Business Hours
+                  </h3>
+                  <p style="color: var(--text-secondary); margin: 0">
+                    Mon - Fri: 9:00 AM - 6:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            style="
+              background: var(--bg-tertiary);
+              padding: 3rem;
+              border-radius: 20px;
+              box-shadow: var(--shadow-lg);
+              border: 1px solid rgba(0, 191, 255, 0.1);
+            "
+          >
+            <h2
+              style="
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+                color: var(--text-primary);
+              "
+            >
+              Send us a Message
+            </h2>
+
+            <form id="contactForm" class="contact-form">
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 1.5rem;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                <div>
+                  <label for="firstName" class="form-label">First Name *</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    class="form-input"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="lastName" class="form-label">Last Name *</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    class="form-input"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div style="margin-bottom: 1.5rem">
+                <label for="email" class="form-label">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                />
+              </div>
+
+              <div style="margin-bottom: 1.5rem">
+                <label for="subject" class="form-label">Subject *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-input"
+                  placeholder="What would you like to discuss?"
+                  required
+                />
+              </div>
+
+              <div style="margin-bottom: 1.5rem">
+                <label for="message" class="form-label">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input"
+                  rows="6"
+                  placeholder="Tell us more about your project or inquiry..."
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="ai-submit-button"
+                style="width: 100%"
+              >
+                <span class="button-text">Send Message</span>
+                <span class="button-loader" style="display: none">
+                  <i class="fas fa-spinner fa-spin"></i> Sending...
+                </span>
+              </button>
+
+              <div
+                id="contactSuccess"
+                class="success-message"
+                style="display: none; margin-top: 1.5rem"
+              >
+                <i class="fas fa-check-circle"></i>
+                <span>Thank you! Your message has been sent successfully.</span>
+              </div>
+
+              <div
+                id="contactError"
+                class="error-message"
+                style="display: none; margin-top: 1.5rem"
+              >
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="contactErrorText"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 OpenZoneAI. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/contact.js') }}"></script>
+  </body>
+</html>

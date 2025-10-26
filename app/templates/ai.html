@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Idea Generator - OpenZoneAI</title>
+    <link rel="icon" href="/static/images/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='/css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">
+          <img
+            src="{{ url_for('static', path='/images/logo.png') }}"
+            alt="OpenZoneAI Logo"
+            style="
+              height: 40px;
+              margin-right: 12px;
+              vertical-align: middle;
+              filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.5));
+            "
+          />
+          OpenZoneAI
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/ai" class="active">AI Business Analyzer</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/chat">Chatbot</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh">
+      <div class="hero-content">
+        <h1>AI Business Analyzer</h1>
+        <p style="font-size: 1.25rem; margin-top: 1rem; max-width: 700px">
+          Describe your business, and we'll suggest innovative AI solutions
+          tailored for you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="features" style="padding-top: 4rem">
+      <div class="container">
+        <!-- Input Form -->
+        <div class="ai-generator-container">
+          <div class="ai-generator-card">
+            <form id="ideaForm" class="idea-form">
+              <div class="form-group">
+                <label for="businessInput" class="form-label"
+                  >Tell us about your business or project:</label
+                >
+                <textarea
+                  id="businessInput"
+                  name="business"
+                  class="form-input"
+                  rows="4"
+                  placeholder="e.g., I run a coffee shop and want to improve customer engagement..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="ai-submit-button" id="submitButton">
+                <span class="button-text">Analyze My Business</span>
+                <span class="button-loader" style="display: none">
+                  <i class="fas fa-spinner fa-spin"></i> Analyzing...
+                </span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Results Display Area -->
+          <div
+            id="resultsContainer"
+            class="results-container"
+            style="display: none"
+          >
+            <div class="results-header">
+              <h3>
+                <i class="fas fa-lightbulb"></i> AI-Powered Ideas for Your
+                Business
+              </h3>
+            </div>
+            <ul id="resultsList" class="results-list">
+              <!-- Results will be dynamically inserted here -->
+            </ul>
+          </div>
+
+          <!-- Error Display -->
+          <div
+            id="errorContainer"
+            class="error-container"
+            style="display: none"
+          >
+            <div class="error-message">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span id="errorText"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section
+      class="about-preview"
+      style="padding-top: 2rem; padding-bottom: 2rem"
+    >
+      <div class="container">
+        <div class="about-content">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1rem">How It Works</h2>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 2rem;
+              margin-top: 2rem;
+            "
+          >
+            <div>
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">📝</div>
+              <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem">Describe</h3>
+              <p style="color: var(--text-light)">
+                Tell us about your business or challenge
+              </p>
+            </div>
+            <div>
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">🤖</div>
+              <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem">Generate</h3>
+              <p style="color: var(--text-light)">
+                Our AI analyzes and creates custom ideas
+              </p>
+            </div>
+            <div>
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">✨</div>
+              <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem">
+                Transform
+              </h3>
+              <p style="color: var(--text-light)">
+                Implement AI solutions to grow your business
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 OpenZoneAI. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/ai.js') }}"></script>
+  </body>
+</html>

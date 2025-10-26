@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenZone Assistant - OpenZoneAI</title>
+    <link rel="icon" href="/static/images/logo.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='/css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo">
+          <img
+            src="{{ url_for('static', path='/images/logo.png') }}"
+            alt="OpenZoneAI Logo"
+            style="
+              height: 40px;
+              margin-right: 12px;
+              vertical-align: middle;
+              filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.5));
+            "
+          />
+          OpenZoneAI
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/ai">AI Business Analyzer</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/chat" class="active">Chatbot</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh">
+      <div class="hero-content">
+        <h1>OpenZone Assistant</h1>
+        <p style="font-size: 1.25rem; margin-top: 1rem; max-width: 700px">
+          Chat with our AI-powered business consultant for tailored advice and
+          innovative solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="features" style="padding-top: 4rem">
+      <div class="container">
+        <!-- Chat Interface -->
+        <div class="chat-container">
+          <div class="chat-box" id="chatBox"></div>
+          <div class="chat-input">
+            <input
+              type="text"
+              id="userInput"
+              placeholder="Type your message..."
+            />
+            <button id="sendButton">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', path='js/chat.js') }}"></script>
+  </body>
+</html>
