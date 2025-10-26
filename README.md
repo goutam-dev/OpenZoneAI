@@ -72,6 +72,15 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+## Environment Configuration
+
+The project uses a `.env` file to store sensitive configurations. Ensure the following key is set:
+
+```
+GEMINI_API_KEY=<your-api-key>
+```
+
+If the `.env` file is missing or the API key is not configured, the application will raise an error.
 
 ## Running the Application
 
@@ -82,6 +91,20 @@ uvicorn app.main:app --reload
 ```
 
 The application will be available at `http://localhost:8000` or `http://127.0.0.1:8000`
+
+## Quick Overview
+
+- **Backend Framework**: The project is built using FastAPI, a modern Python web framework for building APIs.
+- **How to Run**: Follow the installation steps to set up the environment, then start the development server using `uvicorn app.main:app --reload`.
+- **AI Features**:
+  - AI-powered chat endpoint (`/chat`) for generating practical advice based on user input.
+  - AI idea generator (`/generate`) for creating innovative business solutions based on descriptions.
+
+## Demo
+
+Check out the demo of OpenZoneAI in action! Click on the thumbnail below to watch the video:
+
+[![OpenZoneAI Demo](https://res.cloudinary.com/damlr67d9/image/upload/v1761505701/Preview_Openzone_yiq45i.png)](https://drive.google.com/file/d/1hZuKYtmUnfxqHVeDeVkCy97IoNjCrQ0s/view?usp=sharing)
 
 ## Routes
 
@@ -107,23 +130,6 @@ The application will be available at `http://localhost:8000` or `http://127.0.0.
 - **Output**: JSON object with an `ideas` field (list of strings).
 - **Fallback**: Provides default business ideas if the AI service fails.
 
-## Quick Overview
-
-- **Backend Framework**: The project is built using FastAPI, a modern Python web framework for building APIs.
-- **How to Run**: Follow the installation steps to set up the environment, then start the development server using `uvicorn app.main:app --reload`.
-- **AI Features**:
-  - AI-powered chat endpoint (`/chat`) for generating practical advice based on user input.
-  - AI idea generator (`/generate`) for creating innovative business solutions based on descriptions.
-
-## Environment Configuration
-
-The project uses a `.env` file to store sensitive configurations. Ensure the following key is set:
-
-```
-GEMINI_API_KEY=<your-api-key>
-```
-
-If the `.env` file is missing or the API key is not configured, the application will raise an error.
 
 ## Development
 
